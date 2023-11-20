@@ -211,4 +211,69 @@
         <tag>hello</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo博客搭建与部署</title>
+    <url>/2023/11/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h3 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a><a href="https://hexo.io/zh-cn/index.html">Hexo</a>简介</h3><p>Hexo是一款基于<a href="https://so.csdn.net/so/search?q=Node&spm=1001.2101.3001.7020">Node</a>.js的静态博客框架，使用Markdown（或其他渲染引擎）解析文章，依赖少易于安装，可在几秒内利用现有主题生成静态网页。框架提供了很详细的中文文档，大家可以进入<a href="https://hexo.io/zh-cn/">Hexo官网</a>查看。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>Git是一个先进的分布式版本控制工具，可以有效处理不同规模的项目版本管理。这里用于管理你的Hexo文章，将本地的博客上传至<a href="https://so.csdn.net/so/search?q=Github&spm=1001.2101.3001.7020">Github</a>。到Git官网选择合适的版本<a href="https://gitforwindows.org/">下载</a>，安装后会有一个Git Bash的命令行工具，之后用该工具操作Git。</p>
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>正常显示版本号，无报错即为安装成功。</p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>Hexo基于Node.js，所以需要安装Node.js及npm工具。可进入Node.js中文网<a href="http://nodejs.cn/download/">下载</a>，选择LTS（长期支持版本）即可。</p>
+<p>检查是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="博客本地搭建"><a href="#博客本地搭建" class="headerlink" title="博客本地搭建"></a>博客本地搭建</h3><h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>右键打开Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h4 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h4 id="博客本地效果"><a href="#博客本地效果" class="headerlink" title="博客本地效果"></a>博客本地效果</h4><p>Git Bash执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动hexo服务，访问<a href="http://localhost:4000/">http://localhost:4000</a>即可看到生成的博客页面。使用Ctrl+C可关闭本地服务。</p>
+<h3 id="博客Github部署"><a href="#博客Github部署" class="headerlink" title="博客Github部署"></a>博客Github部署</h3><h4 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h4><p>这里需要Github账号，如果没有可以去<a href="https://github.com/join">注册</a>一个。</p>
+<p><a href="https://github.com/login">登录</a>Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是muzihuaner，我的仓库名为muzihuaner.github.io&#96;。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
+<p>登录Github，新建一个仓库，命名格式为：用户名.github.io。比如，我的用户名是muzihuaner，我的仓库名为muzihuaner.github.io&#96;。注意这里必须按此格式命名，只有这样，之后部署到GitHub pages的时候，才会被识别。</p>
+<h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><p>打开Git Bash，输入以下命令，生成本地密钥。这里用户名和邮箱仅作演示，用户名为你Github的用户名，邮箱为你Github的邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;shirllyz&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;1107995569@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输入以下命令，检查输入是否正确：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>确认无误后，输入以下命令，创建SSH：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>无脑下一步即可</p>
+<p>此时在用户文件夹下，已经生成了.ssh文件夹，在本地找到这个文件夹。</p>
+<p>id_rsa是你这台电脑的私人秘钥，id_rsa.pub是公共秘钥。把公钥放在GitHub上，当你连接自己的Github账号时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过Git上传你的文件到GitHub上。</p>
+<p>在Github的设置中，找到SSH and GPG keys，新建SSH Key，以文本方式打开id_rsa.pub文件，将内容复制到Key，标题随便起，添加Key。</p>
+<p>部署代码到Github<br>打开站点配置文件_config.yml，拉到最底部，找到deploy字段，按如下格式修改其内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:shirllyz/shirllyz.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<p>其中repo字段可在Github获取：</p>
+<p>回到Git Bash，安装deploy-git ，用于使用命令部署到Github。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean	//可省略</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy出现下图所示说明部署成功，此时代码已同步至Github。</span><br></pre></td></tr></table></figure>
+
+<p>打开网址<code>shirllyz.github.io</code>就可以看到Hexo博客了。</p>
+<p>常用命令<br>Hexo文档中命令很多，但你并不需要记住每一个。在博客的使用过程中，主要的命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">init用于新建网站</span><br><span class="line"></span><br><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"></span><br><span class="line">new用于新建文章或页面</span><br><span class="line"></span><br><span class="line">hexo new [layout] &lt;title&gt;</span><br><span class="line"></span><br><span class="line">generate用于生成静态页面</span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line">hexo g	//简写</span><br><span class="line"></span><br><span class="line">deploy用于将内容部署到网站</span><br><span class="line"></span><br><span class="line">hexo deploy</span><br><span class="line">hexo -g</span><br><span class="line"></span><br><span class="line">publish用于将内容从drafts文件夹移动到posts文件夹</span><br><span class="line"></span><br><span class="line">hexo publish [layout] &lt;title&gt;</span><br><span class="line"></span><br><span class="line">server用于启动服务器进行预览，默认情况下，访问入口为http://localhost:4000/</span><br><span class="line"></span><br><span class="line">hexo server</span><br><span class="line">hexo s	//简写</span><br><span class="line"></span><br><span class="line">实际上，除了第一次部署时，需要用到hexo init这个命令，平时写博客的过程中，最常用的就是：</span><br><span class="line"></span><br><span class="line">hexo n 新建文章/页面</span><br><span class="line"></span><br><span class="line">hexo g 生成静态页面</span><br><span class="line"></span><br><span class="line">hexo s 本地查看内容</span><br><span class="line"></span><br><span class="line">hexo d 部署到Github</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果需要清除之前生成的内容，可以在生成静态页面前执行hexo clean，其他情况只需要以上四条命令即可。</p>
+<p>之后你就可以使用各种各样的主题啦！详细使用主题的教程，看主题的文档就可以了哦！</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+        <tag>搭建与部署</tag>
+      </tags>
+  </entry>
 </search>
