@@ -88,7 +88,7 @@
 <meta property="og:description" content="input 根据name获取值:$(&quot;input[name&#x3D;&#39;spec_param&#39;]&quot;).val();  class 根据元素寻找其下子元素的长度:$(&quot;.body-list&quot;).find(&quot;.row-list&quot;).length;  click123$(&quot;.add-spec&quot;).on(&quot;cl">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-11-22T01:08:44.000Z">
-<meta property="article:modified_time" content="2023-11-22T03:28:08.754Z">
+<meta property="article:modified_time" content="2023-11-22T05:14:35.144Z">
 <meta property="article:author" content="shirlly">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="jq">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -450,6 +450,10 @@
 <p>在此期间遇到两个问题:</p>
 <p>1：翻译日语的时候会在页面上显示undefined,是因为日语的翻译后语言是以、分隔的,所以在处理日语的时候需要按照语言判断</p>
 <p>2：在方法的方法里面访问外部变量会找不到变量，解决，把变量变成全局变量</p>
+<h3 id="添加HTML代码"><a href="#添加HTML代码" class="headerlink" title="添加HTML代码"></a>添加HTML代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.demo&quot;</span>).<span class="title function_">html</span>(<span class="string">&quot;&lt;span&gt;&lt;/span&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $span=$(<span class="string">&quot;&lt;span&gt;&lt;/span&gt;&quot;</span>);</span><br><span class="line">$(<span class="string">&quot;.demo&quot;</span>).<span class="title function_">append</span>($span);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -626,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class"><span class="nav-number">2.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#click"><span class="nav-number">3.</span> <span class="nav-text">click</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select"><span class="nav-number">4.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JQuery%E4%B8%AD%E8%8E%B7%E5%8F%96JSON%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">JQuery中获取JSON文件中的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E4%BD%BF%E7%94%A8-Ajax-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">5.1.</span> <span class="nav-text">1、使用 Ajax 方式获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8-getJSON-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">5.2.</span> <span class="nav-text">2、使用 getJSON 方式获取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91API%E7%BF%BB%E8%AF%91%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99"><span class="nav-number">6.</span> <span class="nav-text">利用百度翻译API翻译整个网站</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class"><span class="nav-number">2.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#click"><span class="nav-number">3.</span> <span class="nav-text">click</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select"><span class="nav-number">4.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JQuery%E4%B8%AD%E8%8E%B7%E5%8F%96JSON%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">JQuery中获取JSON文件中的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E4%BD%BF%E7%94%A8-Ajax-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">5.1.</span> <span class="nav-text">1、使用 Ajax 方式获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8-getJSON-%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">5.2.</span> <span class="nav-text">2、使用 getJSON 方式获取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91API%E7%BF%BB%E8%AF%91%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99"><span class="nav-number">6.</span> <span class="nav-text">利用百度翻译API翻译整个网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0HTML%E4%BB%A3%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text">添加HTML代码</span></a></li></ol></div>
             
 
           </div>
