@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/S.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="处理数据单元,处理富文本截取12345678910111213141516171819202122232425262728293031323334function extract_text($html, $length) &#123;        &#x2F;&#x2F; 剥离HTML标签        $text &#x3D; strip_tags($html);        &#x2F;&#x2F; 提取前100个字符        $t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用php操作">
+<meta property="og:url" content="https://shirllyz.github.io/2023/11/22/%E5%B8%B8%E7%94%A8php%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="shirlly">
+<meta property="og:description" content="处理数据单元,处理富文本截取12345678910111213141516171819202122232425262728293031323334function extract_text($html, $length) &#123;        &#x2F;&#x2F; 剥离HTML标签        $text &#x3D; strip_tags($html);        &#x2F;&#x2F; 提取前100个字符        $t">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-11-22T01:28:54.000Z">
+<meta property="article:modified_time" content="2023-11-22T02:02:08.551Z">
+<meta property="article:author" content="shirlly">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shirllyz.github.io/2023/11/22/常用php操作/"/>
+
+
+
+
+
+  <title>常用php操作 | shirlly</title>
+  
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" id="body" style="" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shirlly</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">shirlly</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shirllyz.github.io/2023/11/22/%E5%B8%B8%E7%94%A8php%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shirlly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用php操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-11-22T09:28:54+08:00">
+                2023-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="处理数据单元-处理富文本截取"><a href="#处理数据单元-处理富文本截取" class="headerlink" title="处理数据单元,处理富文本截取"></a>处理数据单元,处理富文本截取</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extract_text</span>(<span class="params"><span class="variable">$html</span>, <span class="variable">$length</span></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 剥离HTML标签</span></span><br><span class="line">        <span class="variable">$text</span> = <span class="title function_ invoke__">strip_tags</span>(<span class="variable">$html</span>);</span><br><span class="line">        <span class="comment">// 提取前100个字符</span></span><br><span class="line">        <span class="variable">$text</span> = <span class="title function_ invoke__">mb_substr</span>(<span class="variable">$text</span>, <span class="number">0</span>, <span class="variable">$length</span>, <span class="string">&#x27;UTF-8&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 如果截取的位置刚好在HTML标签内，则去除截断的不完整标签</span></span><br><span class="line">        <span class="variable">$lastTagEndPos</span> = <span class="title function_ invoke__">strrpos</span>(<span class="variable">$text</span>, <span class="string">&#x27;&gt;&#x27;</span>);</span><br><span class="line">        <span class="variable">$lastTagStartPos</span> = <span class="title function_ invoke__">strrpos</span>(<span class="variable">$text</span>, <span class="string">&#x27;&lt;&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$lastTagStartPos</span> !== <span class="literal">false</span> &amp;&amp; <span class="variable">$lastTagEndPos</span> === <span class="literal">false</span>) &#123;</span><br><span class="line">            <span class="variable">$text</span> = <span class="title function_ invoke__">mb_substr</span>(<span class="variable">$text</span>, <span class="number">0</span>, <span class="variable">$lastTagStartPos</span>, <span class="string">&#x27;UTF-8&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 如果截取的位置在HTML实体编码内，则将实体编码转换回原始字符</span></span><br><span class="line">        <span class="variable">$text</span> = <span class="title function_ invoke__">html_entity_decode</span>(<span class="variable">$text</span>, ENT_QUOTES | ENT_HTML5, <span class="string">&#x27;UTF-8&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$text</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getItem</span>(<span class="params"><span class="variable">$news</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$news</span> <span class="keyword">as</span> &amp;<span class="variable">$v</span>)&#123;</span><br><span class="line"><span class="comment">//            $item = $item-&gt;getData();</span></span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;year&#x27;</span>] = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;Y&#x27;</span>, <span class="variable">$v</span>[<span class="string">&#x27;add_time&#x27;</span>]); <span class="comment">// 获取时间戳的年份</span></span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;month&#x27;</span>] = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;m&#x27;</span>, <span class="variable">$v</span>[<span class="string">&#x27;add_time&#x27;</span>]); <span class="comment">// 获取时间戳的月份</span></span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;day&#x27;</span>] = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;d&#x27;</span>, <span class="variable">$v</span>[<span class="string">&#x27;add_time&#x27;</span>]); <span class="comment">// 获取时间戳的日期</span></span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;add_time&#x27;</span>] = <span class="title function_ invoke__">date</span>(<span class="string">&quot;Y-m-d H:i&quot;</span>, <span class="variable">$v</span>[<span class="string">&#x27;add_time&#x27;</span>]);</span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;url&#x27;</span>] = <span class="title function_ invoke__">MyUrl</span>(<span class="string">&#x27;index/article/index&#x27;</span>, [<span class="string">&#x27;id&#x27;</span>=&gt;<span class="variable">$v</span>[<span class="string">&#x27;id&#x27;</span>]]);</span><br><span class="line">            <span class="variable">$v</span>[<span class="string">&#x27;intro&#x27;</span>]=<span class="variable">$result</span> = <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">extract_text</span>(<span class="variable">$v</span>[<span class="string">&#x27;content&#x27;</span>], <span class="number">100</span>);</span><br><span class="line">            <span class="keyword">unset</span>(<span class="variable">$v</span>[<span class="string">&#x27;content&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$news</span>;</span><br><span class="line"><span class="comment">//        pd($news);</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二维数组去重"><a href="#二维数组去重" class="headerlink" title="二维数组去重"></a>二维数组去重</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二维数组去重</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assoc_unique</span>(<span class="params"><span class="variable">$arr</span>, <span class="variable">$key</span></span>) </span>&#123;</span><br><span class="line">    <span class="variable">$tmp_arr</span> = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$arr</span> <span class="keyword">as</span> <span class="variable">$k</span> =&gt; <span class="variable">$v</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">in_array</span>(<span class="variable">$v</span>[<span class="variable">$key</span>], <span class="variable">$tmp_arr</span>)) &#123;<span class="comment">//搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true</span></span><br><span class="line">            <span class="keyword">unset</span>(<span class="variable">$arr</span>[<span class="variable">$k</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$tmp_arr</span>[] = <span class="variable">$v</span>[<span class="variable">$key</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_ invoke__">sort</span>(<span class="variable">$arr</span>); <span class="comment">//sort函数对数组进行排序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$arr</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="检测网址是否可以访问"><a href="#检测网址是否可以访问" class="headerlink" title="检测网址是否可以访问"></a>检测网址是否可以访问</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测网址是否可以访问</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_url</span>(<span class="params"><span class="variable">$url</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (@<span class="title function_ invoke__">fopen</span>(<span class="variable">$url</span>, <span class="string">&#x27;r&#x27;</span>) == <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据键值，对二维数组重新进行分组"><a href="#根据键值，对二维数组重新进行分组" class="headerlink" title="根据键值，对二维数组重新进行分组"></a>根据键值，对二维数组重新进行分组</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**&lt;br&gt;　　　*PHP根据键值，对二维数组重新进行分组</span></span><br><span class="line"><span class="comment">   * [array_group_by ph]</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span>  [type] $arr [二维数组]</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span>  [type] $key [键名]</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> [type]      [新的二维数组]</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">array_group_by</span>(<span class="params"><span class="variable">$arr</span>, <span class="variable">$key</span></span>)</span>&#123;</span><br><span class="line">      <span class="variable">$grouped</span> = <span class="keyword">array</span>();</span><br><span class="line">      <span class="keyword">foreach</span> (<span class="variable">$arr</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123;</span><br><span class="line">          <span class="variable">$grouped</span>[<span class="variable">$value</span>[<span class="variable">$key</span>]][] = <span class="variable">$value</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title function_ invoke__">func_num_args</span>() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">          <span class="variable">$args</span> = <span class="title function_ invoke__">func_get_args</span>();</span><br><span class="line">          <span class="keyword">foreach</span> (<span class="variable">$grouped</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>) &#123;</span><br><span class="line">              <span class="variable">$parms</span> = <span class="title function_ invoke__">array_merge</span>(<span class="variable">$value</span>, <span class="title function_ invoke__">array_slice</span>(<span class="variable">$args</span>, <span class="number">2</span>, <span class="title function_ invoke__">func_num_args</span>()));</span><br><span class="line">              <span class="variable">$grouped</span>[<span class="variable">$key</span>] = <span class="title function_ invoke__">call_user_func_array</span>(<span class="string">&#x27;array_group_by&#x27;</span>, <span class="variable">$parms</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable">$grouped</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据时间判断是否执行某个操作"><a href="#根据时间判断是否执行某个操作" class="headerlink" title="根据时间判断是否执行某个操作"></a>根据时间判断是否执行某个操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_time</span>(<span class="params"><span class="variable">$start</span>,<span class="variable">$end</span></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//判断当前时间是否在时间段内，如果是，则执行</span></span><br><span class="line">    <span class="variable">$Day</span> = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;Y-m-d &#x27;</span>,<span class="title function_ invoke__">time</span>());</span><br><span class="line">    <span class="variable">$timeBegin</span> = <span class="title function_ invoke__">strtotime</span>(<span class="variable">$Day</span>.<span class="variable">$start</span>.<span class="string">&quot;:00&quot;</span>);</span><br><span class="line">    <span class="variable">$timeEnd</span> = <span class="title function_ invoke__">strtotime</span>(<span class="variable">$Day</span>.<span class="variable">$end</span>.<span class="string">&quot;:00&quot;</span>);</span><br><span class="line">    <span class="variable">$curr_time</span> = <span class="title function_ invoke__">time</span>();</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$curr_time</span> &gt;= <span class="variable">$timeBegin</span> &amp;&amp; <span class="variable">$curr_time</span> &lt;= <span class="variable">$timeEnd</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isCorrectTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="variable">$time</span> = <span class="title function_ invoke__">time</span>();</span><br><span class="line">    <span class="variable">$w</span> = <span class="title function_ invoke__">date</span>(<span class="string">&#x27;w&#x27;</span>,<span class="variable">$time</span>);</span><br><span class="line">    <span class="keyword">if</span>(!(<span class="variable">$w</span> != <span class="number">0</span> <span class="keyword">and</span> <span class="variable">$w</span> != <span class="number">6</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//双休日</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//工作日</span></span><br><span class="line">    <span class="comment">//判断是否在规定时间内</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_ invoke__">get_time</span>(<span class="string">&#x27;8:30&#x27;</span>,<span class="string">&#x27;18:00&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="调试打印"><a href="#调试打印" class="headerlink" title="调试打印"></a>调试打印</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 打印调试函数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $content</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $is_die</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pre</span>(<span class="params"><span class="variable">$content</span>, <span class="variable">$is_die</span> = <span class="literal">true</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-type: text/html; charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&lt;pre&gt;&#x27;</span> . <span class="title function_ invoke__">print_r</span>(<span class="variable">$content</span>, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable">$is_die</span> &amp;&amp; <span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pp</span>(<span class="params"><span class="variable">$data</span>,<span class="variable">$is_die</span>=<span class="literal">true</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 定义样式</span></span><br><span class="line">  <span class="variable">$str</span> = <span class="string">&#x27;&lt;pre style=&quot;display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: red;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;&quot;&gt;&#x27;</span>;</span><br><span class="line">  <span class="comment">// 如果是boolean或者null直接显示文字；否则print</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_ invoke__">is_bool</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="variable">$data</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">elseif</span> (<span class="title function_ invoke__">is_null</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="title function_ invoke__">print_r</span>(<span class="variable">$data</span>, <span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="variable">$show_data</span>;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="variable">$str</span>;</span><br><span class="line">  <span class="variable">$is_die</span> &amp;&amp; <span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pd</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 定义样式</span></span><br><span class="line">  <span class="variable">$str</span> = <span class="string">&#x27;&lt;pre style=&quot;display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;&quot;&gt;&#x27;</span>;</span><br><span class="line">  <span class="comment">// 如果是boolean或者null直接显示文字；否则print</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_ invoke__">is_bool</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="variable">$data</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">elseif</span> (<span class="title function_ invoke__">is_null</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="title function_ invoke__">print_r</span>(<span class="variable">$data</span>, <span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="variable">$show_data</span>;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="variable">$str</span>;</span><br><span class="line">  <span class="keyword">die</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">p</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 定义样式</span></span><br><span class="line">  <span class="variable">$str</span> = <span class="string">&#x27;&lt;pre style=&quot;display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;&quot;&gt;&#x27;</span>;</span><br><span class="line">  <span class="comment">// 如果是boolean或者null直接显示文字；否则print</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_ invoke__">is_bool</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="variable">$data</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">elseif</span> (<span class="title function_ invoke__">is_null</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="string">&#x27;null&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable">$show_data</span> = <span class="title function_ invoke__">print_r</span>(<span class="variable">$data</span>, <span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="variable">$show_data</span>;</span><br><span class="line">  <span class="variable">$str</span> .= <span class="string">&#x27;&lt;/pre&gt;&#x27;</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="variable">$str</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用PhpOfficePhpSpreadsheet实现导入导出功能"><a href="#利用PhpOfficePhpSpreadsheet实现导入导出功能" class="headerlink" title="利用PhpOfficePhpSpreadsheet实现导入导出功能"></a>利用PhpOfficePhpSpreadsheet实现导入导出功能</h3><p>注意:</p>
+<ol>
+<li>之前有用过<code>PHPExcel</code>导出过数据,这个是一个不再维护的版本,对于php版本有要求,可以实现功能,但是考虑到<code>不再维护</code>和<code>版本要求在7.2以下</code>,使用方式为:<ol>
+<li>安装<code>composer require phpoffice/phpexcel</code>:</li>
+<li>使用:</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">clientExcel</span>(<span class="params"><span class="variable">$data</span> = [],<span class="variable">$name</span> = <span class="string">&#x27;excel&#x27;</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$excel</span> = <span class="keyword">new</span> <span class="title class_">\PHPExcel</span>(); <span class="comment">//引用phpexcel</span></span><br><span class="line">        <span class="title function_ invoke__">iconv</span>(<span class="string">&#x27;UTF-8&#x27;</span>, <span class="string">&#x27;gb2312&#x27;</span>, <span class="variable">$name</span>); <span class="comment">//针对中文名转码</span></span><br><span class="line"><span class="comment">//        $header = [&#x27;订单编号&#x27;, &#x27;订单状态&#x27;, &#x27;客户名字&#x27;, &#x27;订单名字&#x27;, &#x27;创建时间&#x27;,&#x27;订单备注&#x27;,&#x27;开料尺寸&#x27;,&#x27;印件色数&#x27;,&#x27;印件色别&#x27;,&#x27;印刷方式&#x27;,&#x27;成品尺寸&#x27;,&#x27;印刷板数&#x27;,&#x27;千印数量&#x27;]; //表头,名称可自定义</span></span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">setActiveSheetIndex</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setTitle</span>(<span class="variable">$name</span>); <span class="comment">//设置表名</span></span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">getDefaultRowDimension</span>()-&gt;<span class="title function_ invoke__">setRowHeight</span>(<span class="number">18</span>);</span><br><span class="line"><span class="comment">//        $excel-&gt;getActiveSheet()-&gt;getColumnDimension(&#x27;B&#x27;)-&gt;setWidth(80);</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$letter</span> = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>];<span class="comment">//列坐标</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置表头</span></span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">setActiveSheetIndex</span>(<span class="number">0</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;A1&#x27;</span>, <span class="string">&#x27;商品编号&#x27;</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;B1&#x27;</span>, <span class="string">&#x27;商品型号&#x27;</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;C1&#x27;</span>, <span class="string">&#x27;销售价格&#x27;</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;D1&#x27;</span>, <span class="string">&#x27;库存数&#x27;</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;E1&#x27;</span>, <span class="string">&#x27;仓库名称&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//写入数据</span></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$data</span> <span class="keyword">as</span> <span class="variable">$k</span> =&gt; <span class="variable">$v</span>) &#123;</span><br><span class="line">            <span class="comment">//从第二行开始写入数据（第一行为表头）</span></span><br><span class="line">            <span class="comment">//$excel-&gt;getActiveSheet()-&gt;setCellValue(&#x27;A&#x27;.($k+2),$v[&#x27;gid&#x27;]);</span></span><br><span class="line">            <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;A&#x27;</span> . (<span class="variable">$k</span> + <span class="number">2</span>), <span class="variable">$v</span>[<span class="string">&#x27;goods_id&#x27;</span>].<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;B&#x27;</span> . (<span class="variable">$k</span> + <span class="number">2</span>), <span class="variable">$v</span>[<span class="string">&#x27;goods&#x27;</span>][<span class="string">&#x27;model&#x27;</span>]);</span><br><span class="line">            <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;C&#x27;</span> . (<span class="variable">$k</span> + <span class="number">2</span>), <span class="variable">$v</span>[<span class="string">&#x27;goods&#x27;</span>][<span class="string">&#x27;price&#x27;</span>]);</span><br><span class="line">            <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;D&#x27;</span> . (<span class="variable">$k</span> + <span class="number">2</span>), <span class="variable">$v</span>[<span class="string">&#x27;inventory&#x27;</span>]);</span><br><span class="line">            <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="string">&#x27;E&#x27;</span> . (<span class="variable">$k</span> + <span class="number">2</span>), <span class="variable">$v</span>[<span class="string">&#x27;warehouse_name&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置单元格边框</span></span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">getStyle</span>(<span class="string">&quot;A1:E&quot;</span> . (<span class="title function_ invoke__">count</span>(<span class="variable">$data</span>) + <span class="number">1</span>))-&gt;<span class="title function_ invoke__">getBorders</span>()-&gt;<span class="title function_ invoke__">getAllBorders</span>()-&gt;<span class="title function_ invoke__">setBorderStyle</span>();</span><br><span class="line"></span><br><span class="line">        <span class="title function_ invoke__">ob_end_clean</span>();</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type: application/vnd.ms-excel&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Disposition: attachment;filename=&quot;&#x27;</span> . <span class="variable">$name</span> . <span class="string">&#x27;.xls&quot;&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Cache-Control: max-age=0&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="variable">$res_excel</span> = <span class="title class_">PHPExcel_IOFactory</span>::<span class="title function_ invoke__">createWriter</span>(<span class="variable">$excel</span>, <span class="string">&#x27;Excel2007&#x27;</span>);</span><br><span class="line">        <span class="variable">$res_excel</span>-&gt;<span class="title function_ invoke__">save</span>(<span class="string">&#x27;php://output&#x27;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="phpspreadsheet使用"><a href="#phpspreadsheet使用" class="headerlink" title="phpspreadsheet使用"></a>phpspreadsheet使用</h3><h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require phpoffice/phpspreadsheet</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-导出"><a href="#2-导出" class="headerlink" title="2. 导出"></a>2. 导出</h4><p>查询数据</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 获取数据列表</span></span><br><span class="line">        <span class="variable">$data_params</span> = [</span><br><span class="line">            <span class="string">&#x27;n&#x27;</span>=&gt;<span class="number">9999</span>, 　　　　　　　　<span class="string">&#x27;field&#x27;</span>=&gt;<span class="string">&#x27;id,model,min_price,brand_id,brand_name,price,original_price,goods_time,inventory,inventory_unit,access_count,add_time,upd_time&#x27;</span>,</span><br><span class="line">        ];</span><br><span class="line">        <span class="variable">$ret</span> = <span class="title class_">GoodsService</span>::<span class="title function_ invoke__">GoodsListWithPriceTable</span>(<span class="variable">$data_params</span>);</span><br><span class="line">        <span class="variable">$excel</span> = <span class="keyword">new</span> <span class="title class_">Office</span>();</span><br><span class="line">        <span class="comment">//设置表头：</span></span><br><span class="line">        <span class="variable">$head</span> = [<span class="string">&#x27;编号&#x27;</span>, <span class="string">&#x27;型号&#x27;</span>, <span class="string">&#x27;品牌id&#x27;</span>, <span class="string">&#x27;品牌名&#x27;</span>, <span class="string">&#x27;价格&#x27;</span>,<span class="string">&#x27;原价&#x27;</span>,<span class="string">&#x27;货期&#x27;</span>,<span class="string">&#x27;库存&#x27;</span>,<span class="string">&#x27;库存单位&#x27;</span>,<span class="string">&#x27;访问人数&#x27;</span>,<span class="string">&#x27;阶梯价格&#x27;</span>];</span><br><span class="line">        <span class="comment">//数据中对应的字段，用于读取相应数据：</span></span><br><span class="line">        <span class="variable">$keys</span> = [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;model&#x27;</span>, <span class="string">&#x27;brand_id&#x27;</span>, <span class="string">&#x27;brand_name&#x27;</span>, <span class="string">&#x27;price&#x27;</span> ,<span class="string">&#x27;original_price&#x27;</span> ,<span class="string">&#x27;goods_time&#x27;</span> ,<span class="string">&#x27;inventory&#x27;</span> ,<span class="string">&#x27;inventory_unit&#x27;</span> ,<span class="string">&#x27;access_count&#x27;</span>,<span class="string">&#x27;price_table&#x27;</span>];</span><br><span class="line"></span><br><span class="line">        <span class="variable">$excel</span>-&gt;<span class="title function_ invoke__">outdataWithPriceTable</span>(<span class="string">&#x27;产品信息表&#x27;</span>, <span class="variable">$ret</span>[<span class="string">&#x27;data&#x27;</span>], <span class="variable">$head</span>, <span class="variable">$keys</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>导出的功能实现类</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">service</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Spreadsheet</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Writer</span>\<span class="title">Xlsx</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Office</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 导出excel表</span></span><br><span class="line"><span class="comment">     * $data：要导出excel表的数据，接受一个二维数组</span></span><br><span class="line"><span class="comment">     * $name：excel表的表名</span></span><br><span class="line"><span class="comment">     * $head：excel表的表头，接受一个一维数组</span></span><br><span class="line"><span class="comment">     * $key：$data中对应表头的键的数组，接受一个一维数组</span></span><br><span class="line"><span class="comment">     * 备注：此函数缺点是，表头（对应列数）不能超过26；</span></span><br><span class="line"><span class="comment">     *循环不够灵活，一个单元格中不方便存放两个数据库字段的值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">outdata</span>(<span class="params"><span class="variable">$name</span>=<span class="string">&#x27;测试表&#x27;</span>, <span class="variable">$data</span>=[], <span class="variable">$head</span>=[], <span class="variable">$keys</span>=[]</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$count</span> = <span class="title function_ invoke__">count</span>(<span class="variable">$head</span>);  <span class="comment">//计算表头数量</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$spreadsheet</span> = <span class="keyword">new</span> <span class="title class_">Spreadsheet</span>();</span><br><span class="line">        <span class="variable">$sheet</span> = <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">65</span>; <span class="variable">$i</span> &lt; <span class="variable">$count</span> + <span class="number">65</span>; <span class="variable">$i</span>++) &#123;     <span class="comment">//数字转字母从65开始，循环设置表头：</span></span><br><span class="line">            <span class="variable">$sheet</span>-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)) . <span class="string">&#x27;1&#x27;</span>, <span class="variable">$head</span>[<span class="variable">$i</span> - <span class="number">65</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*--------------开始从数据库提取信息插入Excel表中------------------*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$data</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$item</span>) &#123;             <span class="comment">//循环设置单元格：</span></span><br><span class="line">            <span class="comment">//$key+2,因为第一行是表头，所以写到表格时   从第二行开始写</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">65</span>; <span class="variable">$i</span> &lt; <span class="variable">$count</span> + <span class="number">65</span>; <span class="variable">$i</span>++) &#123;     <span class="comment">//数字转字母从65开始：</span></span><br><span class="line">                <span class="variable">$sheet</span>-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)) . (<span class="variable">$key</span> + <span class="number">2</span>), <span class="variable">$item</span>[<span class="variable">$keys</span>[<span class="variable">$i</span> - <span class="number">65</span>]]);</span><br><span class="line">                <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">getColumnDimension</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)))-&gt;<span class="title function_ invoke__">setWidth</span>(<span class="number">20</span>); <span class="comment">//固定列宽</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type: application/vnd.ms-excel&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Disposition: attachment;filename=&quot;&#x27;</span> . <span class="variable">$name</span> . <span class="string">&#x27;.xlsx&quot;&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Cache-Control: max-age=0&#x27;</span>);</span><br><span class="line">        <span class="variable">$writer</span> = <span class="keyword">new</span> <span class="title class_">Xlsx</span>(<span class="variable">$spreadsheet</span>);</span><br><span class="line">        <span class="variable">$writer</span>-&gt;<span class="title function_ invoke__">save</span>(<span class="string">&#x27;php://output&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除清空：</span></span><br><span class="line">        <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">disconnectWorksheets</span>();</span><br><span class="line">        <span class="keyword">unset</span>(<span class="variable">$spreadsheet</span>);</span><br><span class="line">        <span class="keyword">exit</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">outdataWithPriceTable</span>(<span class="params"><span class="variable">$name</span>=<span class="string">&#x27;测试表&#x27;</span>, <span class="variable">$data</span>=[], <span class="variable">$head</span>=[], <span class="variable">$keys</span>=[]</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"><span class="comment">//        pd($data);</span></span><br><span class="line">        <span class="variable">$count</span> = <span class="title function_ invoke__">count</span>(<span class="variable">$head</span>);  <span class="comment">//计算表头数量</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$spreadsheet</span> = <span class="keyword">new</span> <span class="title class_">Spreadsheet</span>();</span><br><span class="line">        <span class="variable">$sheet</span> = <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">65</span>; <span class="variable">$i</span> &lt; <span class="variable">$count</span> + <span class="number">65</span>; <span class="variable">$i</span>++) &#123;     <span class="comment">//数字转字母从65开始，循环设置表头：</span></span><br><span class="line"><span class="comment">//            if($i-65==10)&#123;</span></span><br><span class="line"><span class="comment">//                $sheet-&gt;mergeCells(&#x27;K1:L1&#x27;)-&gt;setCellValue(strtoupper(chr($i)) . &#x27;1&#x27;, $head[$i - 65]);</span></span><br><span class="line"><span class="comment">//            &#125;else&#123;</span></span><br><span class="line">                <span class="variable">$sheet</span>-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)) . <span class="string">&#x27;1&#x27;</span>, <span class="variable">$head</span>[<span class="variable">$i</span> - <span class="number">65</span>]);</span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*--------------开始从数据库提取信息插入Excel表中------------------*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$data</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$item</span>) &#123;             <span class="comment">//循环设置单元格：</span></span><br><span class="line">            <span class="comment">//$key+2,因为第一行是表头，所以写到表格时   从第二行开始写</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">65</span>; <span class="variable">$i</span> &lt; <span class="variable">$count</span> + <span class="number">65</span>; <span class="variable">$i</span>++) &#123;     <span class="comment">//数字转字母从65开始：</span></span><br><span class="line">                <span class="keyword">if</span>(<span class="variable">$i</span>-<span class="number">65</span>==<span class="number">10</span>)&#123;</span><br><span class="line">                    <span class="variable">$num</span>=<span class="title function_ invoke__">count</span>(<span class="variable">$item</span>[<span class="variable">$keys</span>[<span class="variable">$i</span> - <span class="number">65</span>]]);</span><br><span class="line">                    <span class="keyword">for</span>(<span class="variable">$j</span>=<span class="number">0</span>;<span class="variable">$j</span>&lt;<span class="variable">$num</span>;<span class="variable">$j</span>++)&#123;</span><br><span class="line"><span class="comment">//                        $spreadsheet-&gt;getActiveSheet()-&gt;mergeCells(strtoupper(chr($i+$j+1)) . ($key + 2 ).&#x27;:&#x27;.strtoupper(chr($i+$j+1)) . ($key + 2+(2*$num)));</span></span><br><span class="line"><span class="comment">//                        $sheet-&gt;setCellValue(strtoupper(chr($i+$j+1)) . ($key + 2 ),$item[$keys[$i - 65]][$j][&#x27;number&#x27;] );</span></span><br><span class="line">                        <span class="variable">$sheet</span>-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>+<span class="variable">$j</span>+<span class="number">1</span>)) . (<span class="variable">$key</span> + <span class="number">2</span> ),<span class="variable">$item</span>[<span class="variable">$keys</span>[<span class="variable">$i</span> - <span class="number">65</span>]][<span class="variable">$j</span>][<span class="string">&#x27;number&#x27;</span>].<span class="string">&#x27;x&#x27;</span>.<span class="variable">$item</span>[<span class="variable">$keys</span>[<span class="variable">$i</span> - <span class="number">65</span>]][<span class="variable">$j</span>][<span class="string">&#x27;one_price&#x27;</span>]  );</span><br><span class="line"><span class="comment">//                        $sheet-&gt;setCellValue(strtoupper(chr($i+$j+2)) . ($key + 2), 1);</span></span><br><span class="line">                    &#125;</span><br><span class="line"><span class="comment">//                    for($ii=0;$ii&lt;$num;$ii++)&#123;</span></span><br><span class="line"><span class="comment">////                        $spreadsheet-&gt;getActiveSheet()-&gt;mergeCells(strtoupper(chr($i+$j+1)) . ($key + 2 ).&#x27;:&#x27;.strtoupper(chr($i+$j+1)) . ($key + 2+(2*$num)));</span></span><br><span class="line"><span class="comment">////                        $sheet-&gt;setCellValue(strtoupper(chr($i+$j+1)) . ($key + 2 ),$item[$keys[$i - 65]][$j][&#x27;number&#x27;] );</span></span><br><span class="line"><span class="comment">//                        $sheet-&gt;setCellValue(strtoupper(chr($i+$num+$ii+1)) . ($key + 2 ),$item[$keys[$i - 65]][$ii][&#x27;one_price&#x27;] );</span></span><br><span class="line"><span class="comment">////                        $sheet-&gt;setCellValue(strtoupper(chr($i+$j+2)) . ($key + 2), 1);</span></span><br><span class="line"><span class="comment">//                    &#125;</span></span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="variable">$sheet</span>-&gt;<span class="title function_ invoke__">setCellValue</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)) . (<span class="variable">$key</span> + <span class="number">2</span>), <span class="variable">$item</span>[<span class="variable">$keys</span>[<span class="variable">$i</span> - <span class="number">65</span>]]);</span><br><span class="line">                    <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">getColumnDimension</span>(<span class="title function_ invoke__">strtoupper</span>(<span class="title function_ invoke__">chr</span>(<span class="variable">$i</span>)))-&gt;<span class="title function_ invoke__">setWidth</span>(<span class="number">20</span>); <span class="comment">//固定列宽</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        die;</span></span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type: application/vnd.ms-excel&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Disposition: attachment;filename=&quot;&#x27;</span> . <span class="variable">$name</span> . <span class="string">&#x27;.xlsx&quot;&#x27;</span>);</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Cache-Control: max-age=0&#x27;</span>);</span><br><span class="line">        <span class="variable">$writer</span> = <span class="keyword">new</span> <span class="title class_">Xlsx</span>(<span class="variable">$spreadsheet</span>);</span><br><span class="line">        <span class="variable">$writer</span>-&gt;<span class="title function_ invoke__">save</span>(<span class="string">&#x27;php://output&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除清空：</span></span><br><span class="line">        <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">disconnectWorksheets</span>();</span><br><span class="line">        <span class="keyword">unset</span>(<span class="variable">$spreadsheet</span>);</span><br><span class="line">        <span class="keyword">exit</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>备注</code>:这里的第一个方法是实现一个二维数组的导出的</p>
+<p>第二个方法是因为在这次的数据中需要处理阶梯价格,是一个一对多的关系,这里导出是按照阶梯价格排成横用x号拼接的</p>
+<h4 id="3-导入"><a href="#3-导入" class="headerlink" title="3. 导入"></a>3. 导入</h4><p>视图层的代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;include file=&quot;public/header&quot; /&#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;am-form am-form-horizontal&quot;</span> <span class="attr">action</span>=<span class="string">&quot;&#123;&#123;:MyUrl(&#x27;index/goods/upload&#x27;)&#125;&#125;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;am-form-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fileToUpload&quot;</span> <span class="attr">class</span>=<span class="string">&quot;am-u-sm-2 am-form-label &quot;</span> &gt;</span>选择文件<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;am-u-sm-10&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fileToUpload&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fileToUpload&quot;</span> &gt;</span></span><br><span class="line"><span class="comment">&lt;!--            &lt;i class=&quot;am-icon-cloud-upload&quot;&gt;&lt;/i&gt; 选择要上传的文件&lt;/button&gt;--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;am-form-help&quot;</span>&gt;</span>请选择要上传的文件<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;am-form-group&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;am-u-sm-10 am-u-sm-offset-2&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;am-btn am-btn-primary&quot;</span> <span class="attr">name</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>控制层的代码</p>
+<p><code>备注:</code>这里的代码还没有完善,还需要更新到数据库里面去</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 获取表单上传文件 例如上传了001.jpg</span></span><br><span class="line">        <span class="variable">$file</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">file</span>(<span class="string">&#x27;fileToUpload&#x27;</span>);</span><br><span class="line">        <span class="comment">// 移动到框架应用根目录/uploads/ 目录下</span></span><br><span class="line">        <span class="variable">$info</span> = <span class="variable">$file</span>-&gt;<span class="title function_ invoke__">move</span>( <span class="string">&#x27;../public/static/xls&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$info</span>)&#123;</span><br><span class="line">            <span class="variable">$spreadsheet</span> = <span class="title class_">IOFactory</span>::<span class="title function_ invoke__">load</span>(<span class="variable">$info</span>-&gt;<span class="title function_ invoke__">getPathName</span>());</span><br><span class="line">            <span class="variable">$sheetData</span> = <span class="variable">$spreadsheet</span>-&gt;<span class="title function_ invoke__">getActiveSheet</span>()-&gt;<span class="title function_ invoke__">toArray</span>(<span class="literal">null</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">            <span class="title function_ invoke__">pd</span>(<span class="variable">$sheetData</span>);</span><br><span class="line">            <span class="comment">//            $row_num = count($sheetData);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            $now_time = time();</span></span><br><span class="line"><span class="comment">//            $import_data = []; //数组形式获取表格数据</span></span><br><span class="line"><span class="comment">//            //从第二行开始做for循环</span></span><br><span class="line"><span class="comment">//            for ($i = 2; $i &lt;= $row_num; $i++) &#123;</span></span><br><span class="line"><span class="comment">//                $bank_deal_no = $sheetData[$i][&#x27;A&#x27;];</span></span><br><span class="line"><span class="comment">//                $account_name = $sheetData[$i][&#x27;B&#x27;];</span></span><br><span class="line"><span class="comment">//                $bank_card = $sheetData[$i][&#x27;C&#x27;];</span></span><br><span class="line"><span class="comment">//                $deal_money = $sheetData[$i][&#x27;D&#x27;];</span></span><br><span class="line"><span class="comment">//                $deal_time = $sheetData[$i][&#x27;E&#x27;];</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">////                if (!empty($bank_deal_no) &amp;&amp; !empty($account_name) &amp;&amp; !empty($bank_card) &amp;&amp; !empty($deal_money) &amp;&amp; !empty($deal_time)) &#123;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;bank_deal_no&#x27;] = $bank_deal_no;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;account_name&#x27;] = $account_name;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;bank_card&#x27;] = $bank_card;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;deal_money&#x27;] = $deal_money;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;deal_time&#x27;] = $deal_time;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;create_time&#x27;] = $now_time;</span></span><br><span class="line"><span class="comment">////                    $import_data[$i][&#x27;update_time&#x27;] = $now_time;</span></span><br><span class="line"><span class="comment">////                &#125;</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            sort($import_data);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            if (empty($import_data)) &#123;</span></span><br><span class="line"><span class="comment">//                return json([&#x27;status&#x27; =&gt; &#x27;1&#x27;, &#x27;message&#x27; =&gt; &#x27;数据解析失败&#x27;]);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="comment">// 成功上传后 获取上传信息</span></span><br><span class="line">            <span class="comment">// 输出 jpg</span></span><br><span class="line"><span class="comment">//            echo $info-&gt;getExtension();</span></span><br><span class="line"><span class="comment">//            echo $info-&gt;getPathName();</span></span><br><span class="line">            <span class="comment">// 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg</span></span><br><span class="line"><span class="comment">//            echo $info-&gt;getSaveName();</span></span><br><span class="line">            <span class="comment">// 输出 42a79759f284b767dfcb2a0197904287.jpg</span></span><br><span class="line"><span class="comment">//            echo $info-&gt;getFilename();</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// 上传失败获取错误信息</span></span><br><span class="line">            <span class="keyword">echo</span> <span class="variable">$file</span>-&gt;<span class="title function_ invoke__">getError</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/11/22/%E5%B8%B8%E7%94%A8css%E6%93%8D%E4%BD%9C/" rel="next" title="常用css操作">
+                <i class="fa fa-chevron-left"></i> 常用css操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%8D%95%E5%85%83-%E5%A4%84%E7%90%86%E5%AF%8C%E6%96%87%E6%9C%AC%E6%88%AA%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">处理数据单元,处理富文本截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D"><span class="nav-number">2.</span> <span class="nav-text">二维数组去重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E7%BD%91%E5%9D%80%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE"><span class="nav-number">3.</span> <span class="nav-text">检测网址是否可以访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E9%94%AE%E5%80%BC%EF%BC%8C%E5%AF%B9%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E9%87%8D%E6%96%B0%E8%BF%9B%E8%A1%8C%E5%88%86%E7%BB%84"><span class="nav-number">4.</span> <span class="nav-text">根据键值，对二维数组重新进行分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%97%B6%E9%97%B4%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%89%A7%E8%A1%8C%E6%9F%90%E4%B8%AA%E6%93%8D%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">根据时间判断是否执行某个操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E6%89%93%E5%8D%B0"><span class="nav-number">6.</span> <span class="nav-text">调试打印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8PhpOfficePhpSpreadsheet%E5%AE%9E%E7%8E%B0%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">利用PhpOfficePhpSpreadsheet实现导入导出功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phpspreadsheet%E4%BD%BF%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">phpspreadsheet使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85"><span class="nav-number">8.1.</span> <span class="nav-text">1. 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AF%BC%E5%87%BA"><span class="nav-number">8.2.</span> <span class="nav-text">2. 导出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%AF%BC%E5%85%A5"><span class="nav-number">8.3.</span> <span class="nav-text">3. 导入</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shirlly</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9.2k</span>
+  
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="https://shirllyz.github.io/live2d-widget/autoload.js"></script>
+
+</html>

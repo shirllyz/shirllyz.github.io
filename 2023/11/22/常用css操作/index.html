@@ -69,6 +69,7 @@
 
 
 
+  <meta name="keywords" content="-css," />
 
 
 
@@ -78,16 +79,18 @@
 
 
 
-<meta name="description" content="shirlly">
+
+<meta name="description" content="文字图片禁止选中12345678910&#x2F;* 防止文本选中 *&#x2F;.unselectable-text &#123;  user-select: none;&#125; &#x2F;* 防止图片选中 *&#x2F;.unselectable-image &#123;  user-drag: none;  user-select: none;&#125;  截取文字123456789101112131415&lt;styl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用css操作">
 <meta property="og:url" content="https://shirllyz.github.io/2023/11/22/%E5%B8%B8%E7%94%A8css%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="shirlly">
-<meta property="og:description" content="shirlly">
+<meta property="og:description" content="文字图片禁止选中12345678910&#x2F;* 防止文本选中 *&#x2F;.unselectable-text &#123;  user-select: none;&#125; &#x2F;* 防止图片选中 *&#x2F;.unselectable-image &#123;  user-drag: none;  user-select: none;&#125;  截取文字123456789101112131415&lt;styl">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-11-22T01:08:53.000Z">
-<meta property="article:modified_time" content="2023-11-22T01:08:53.890Z">
+<meta property="article:modified_time" content="2023-11-22T01:54:08.496Z">
 <meta property="article:author" content="shirlly">
+<meta property="article:tag" content="-css">
 <meta name="twitter:card" content="summary">
 
 
@@ -328,6 +331,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,7 +379,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1.4k
                 </span>
               
 
@@ -370,7 +395,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -391,7 +416,66 @@
       
 
       
-        
+        <h3 id="文字图片禁止选中"><a href="#文字图片禁止选中" class="headerlink" title="文字图片禁止选中"></a>文字图片禁止选中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 防止文本选中 */</span></span><br><span class="line"><span class="selector-class">.unselectable-text</span> &#123;</span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 防止图片选中 */</span></span><br><span class="line"><span class="selector-class">.unselectable-image</span> &#123;</span><br><span class="line">  user-drag: none;</span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="截取文字"><a href="#截取文字" class="headerlink" title="截取文字"></a>截取文字</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-class">.news-content</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">        <span class="comment">/*background: red;*/</span></span><br><span class="line">        <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">        -webkit-box-orient: vertical;</span><br><span class="line">        <span class="attribute">overflow</span>: hidden;</span><br><span class="line">        -webkit-line-clamp: <span class="number">2</span>; <span class="comment">/* 指定显示的行数 */</span></span><br><span class="line">        <span class="attribute">text-overflow</span>: ellipsis; <span class="comment">/* 使用省略号表示截取的部分 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.news-content</span> <span class="selector-tag">h3</span>&#123;</span><br><span class="line">        <span class="attribute">white-space</span>: nowrap; <span class="comment">/* 禁止换行 */</span></span><br><span class="line">        <span class="attribute">overflow</span>: hidden; <span class="comment">/* 隐藏溢出部分 */</span></span><br><span class="line">        <span class="attribute">text-overflow</span>: ellipsis; <span class="comment">/* 使用省略号表示截取的部分 */</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><ul>
+<li><strong>1.使用flex布局</strong></li>
+</ul>
+<p>通过给父盒子添加display：flex属性（存在兼容性问题）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">   <span class="attribute">background-color</span>: green;</span><br><span class="line">   <span class="attribute">display</span>: flex;  </span><br><span class="line">   <span class="attribute">justify-content</span>: center;       <span class="comment">/*水平排列居中*/</span></span><br><span class="line">   <span class="comment">/* align-items: center; */</span>     <span class="comment">/*竖直排列居中*/</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">   <span class="attribute">background-color</span>: pink;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>2.margin：auto实现</strong></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="comment">/* 如果父级有relative,则相对于父级盒子居中） */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;       </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="comment">/* 水平居中 */</span></span><br><span class="line">  <span class="attribute">margin</span>:  <span class="number">0</span> auto;     </span><br><span class="line">      </span><br><span class="line">  <span class="comment">/* 垂直居中 */</span></span><br><span class="line">  <span class="comment">/* margin: auto; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>3.通过transform实现</strong></li>
+</ul>
+<p>使用top:50%; left:50%;时，是以盒子的左上角为原点定位，是左上角的原点居中，但是元素本身并不居中。</p>
+<p>transform：translate(-50%，-50%):分别向左向上移动自身长宽的50%，使其位于中心。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    * &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.div1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">15px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: powderblue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div1&quot;</span>&gt;</span></span><br><span class="line">    不知道高度</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个方法不需要知道高度，使用的是自身百分比</p>
+<ul>
+<li><strong>4.margin负间距</strong></li>
+</ul>
+<p>该方法高度类似于通过transform实现居中方法，但是需要知道盒子大小，才能进行最后两步的相对移位，transform方法因为使用的是自身百分比，故不须知道具体宽高</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.div</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>5.tabel-cell</strong></li>
+</ul>
+<p>利用table-cell来控制垂直居中。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="comment">/* display: table-cell; */</span></span><br><span class="line">  <span class="comment">/* vertical-align: middle; */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>6.button居中</strong></li>
+</ul>
+<p>利用button做外容器，里边的块元素会自动垂直居中，只需要控制一下水平居中就可以达到效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: blueviolet;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">background-color</span>: burlywood;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="两栏布局（左侧固定宽度为200px，右侧自适应）"><a href="#两栏布局（左侧固定宽度为200px，右侧自适应）" class="headerlink" title="两栏布局（左侧固定宽度为200px，右侧自适应）"></a>两栏布局（左侧固定宽度为200px，右侧自适应）</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;wrap&#x27;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;left&#x27;</span>&gt;</span>左侧固定内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;right&#x27;</span>&gt;</span>右侧自适应<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-使用浮动-float"><a href="#1-使用浮动-float" class="headerlink" title="1.使用浮动-float"></a>1.使用浮动-float</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line"> * &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="selector-class">.wrap</span> &#123;</span><br><span class="line">        <span class="attribute">overflow</span>: hidden;</span><br><span class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*脱离文档流*/</span></span><br><span class="line">   <span class="selector-class">.left</span> &#123;</span><br><span class="line">        <span class="attribute">float</span>: left;      //左边元素向左浮动</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">background</span>: pink;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.right</span> &#123;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">background</span>: skyblue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">注：使用`<span class="attribute">float</span>`会使元素脱离文档流，这样会导致两个<span class="selector-tag">div</span>发生重叠，而在`<span class="selector-class">.wrap</span>`中设置`<span class="attribute">overflow</span>: hidden`是为了触发BFC，清除浮动（不会重叠）。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用绝对定位-absolute"><a href="#2-使用绝对定位-absolute" class="headerlink" title="2.使用绝对定位-absolute"></a>2.使用绝对定位-absolute</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*脱离文档流*/</span></span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;   // 绝对定位</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">200px</span>;    // 设置左边距和左边元素等宽</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：这个实现方案要注意的是`<span class="selector-class">.right</span>`中设置`<span class="attribute">margin-left</span>: <span class="number">200px</span>`，这里的<span class="number">200px</span>是左边元素的宽。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用弹性布局-flex"><a href="#3-使用弹性布局-flex" class="headerlink" title="3.使用弹性布局-flex"></a>3.使用弹性布局-flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;      // 弹性布局 </span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>;   // 左边元素不扩大不缩小，默认宽度为<span class="number">200px</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: purple;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;          // 右边元素扩大，自动填充过多空间</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注：`<span class="attribute">flex</span>`属性要在子元素上设置。`<span class="attribute">flex</span>`属性是`<span class="attribute">flex-grow</span>`（增长比例）和`<span class="attribute">flex-shrink</span>`（缩小比例）和`<span class="attribute">flex-basis</span>`（默认大小）的缩写。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-使用表格布局-table"><a href="#4-使用表格布局-table" class="headerlink" title="4.使用表格布局-table"></a>4.使用表格布局-table</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;      // 表格布局</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:table-cell;  //设置这个元素为表单中的单元格</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>： <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: purple;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:table-cell;  //设置这个元素为表单中的单元格</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line">注：表格布局按照我的理解是将父元素设置成一个表格，里面的元素都是一个一个单元格，可以设置几行几列，所以这个方法也可以实现三栏布局（一行三列）；可以设置行高列高。</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-使用网格布局-grid"><a href="#5-使用网格布局-grid" class="headerlink" title="5.使用网格布局-grid"></a>5.使用网格布局-grid</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:grid;   <span class="comment">// 网格布局</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">200px</span>;  <span class="comment">// 设置行高</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> auto;   <span class="comment">// 设置列宽</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: purple;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line">注：`<span class="attribute">grid</span>`布局真的太方便啦！！但是放在这里好像有点大材小用了</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-使用calc-函数"><a href="#6-使用calc-函数" class="headerlink" title="6.使用calc()函数"></a>6.使用calc()函数</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认设置的边距*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">background</span>: purple;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: skyblue;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>( <span class="number">100%</span> -<span class="number">200px</span> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
       
     </div>
     
@@ -405,6 +489,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># -css</a>
+          
+        </div>
       
 
       
@@ -424,6 +514,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/11/22/%E5%B8%B8%E7%94%A8php%E6%93%8D%E4%BD%9C/" rel="prev" title="常用php操作">
+                常用php操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,8 +569,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,7 +594,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +605,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -513,7 +616,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -536,6 +639,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E5%9B%BE%E7%89%87%E7%A6%81%E6%AD%A2%E9%80%89%E4%B8%AD"><span class="nav-number">1.</span> <span class="nav-text">文字图片禁止选中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%AA%E5%8F%96%E6%96%87%E5%AD%97"><span class="nav-number">2.</span> <span class="nav-text">截取文字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%85%E4%B8%AD"><span class="nav-number"></span> <span class="nav-text">居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%EF%BC%88%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AE%BD%E5%BA%A6%E4%B8%BA200px%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">两栏布局（左侧固定宽度为200px，右侧自适应）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8%E6%B5%AE%E5%8A%A8-float"><span class="nav-number">1.</span> <span class="nav-text">1.使用浮动-float</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-absolute"><span class="nav-number">2.</span> <span class="nav-text">2.使用绝对定位-absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80-flex"><span class="nav-number">3.</span> <span class="nav-text">3.使用弹性布局-flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80-table"><span class="nav-number">4.</span> <span class="nav-text">4.使用表格布局-table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80-grid"><span class="nav-number">5.</span> <span class="nav-text">5.使用网格布局-grid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8calc-%E5%87%BD%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">6.使用calc()函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -564,7 +683,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.6k</span>
+    <span title="Site words total count">9.2k</span>
   
 </div>
 <!--
