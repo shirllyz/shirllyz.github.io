@@ -58,6 +58,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+  color: #fc6423;
 }
 dfn {
   font-style: italic;
@@ -1841,7 +1842,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #243d3d;
+  background: #b065ff;
 }
 .links-of-blogroll {
   font-size: 13px;
