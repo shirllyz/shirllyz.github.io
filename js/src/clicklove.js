@@ -6,7 +6,7 @@ var r = Math.floor(Math.random() * 256);
 var g = Math.floor(Math.random() * 256);
 var b = Math.floor(Math.random() * 256);
 console.log(b);
-var color = "rgb(" + r + "," + g + "," + b + ",0.3) ";
+var color = "rgb(" + r + "," + g + "," + b + ",0.1) ";
 console.log(color)
 var bd = document.getElementById("body")
 bd.style.background = color;
