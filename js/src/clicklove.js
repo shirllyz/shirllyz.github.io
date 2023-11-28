@@ -9,6 +9,5 @@ console.log(b);
 var color = "rgb(" + r + "," + g + "," + b + ",0.1) ";
 console.log(color)
 var bd = document.getElementById("body")
-bd.style.background = color;
-bd.style.backgroundImage = "url(/images/body.jpg) no-repeat";
-bd.style.backgroundSize = "cover";
+bd.style.background = 'url("/images/body.jpg") center center / cover no-repeat fixed';
+// bd.style.background = color;
