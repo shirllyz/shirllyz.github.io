@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9d666;
+  background: #95ff3c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3252,4 +3252,11 @@ img {
   content: "🪁";
   padding-right: 6px;
   display: inline-block;
+}
+mark {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  border: solid 1px #155724;
+  font-size: 1em;
 }
