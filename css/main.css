@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f196ff;
+  background: #50ffbb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3259,4 +3259,10 @@ mark {
   border-color: #c3e6cb;
   border: solid 1px #155724;
   font-size: 1em;
+}
+em {
+  color: #fffa00 !important;
+  font-style: italic !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
 }
