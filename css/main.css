@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbea3;
+  background: #a3ffd4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3162,10 +3162,10 @@ body {
   transition-duration: 0.4s;
 }
 .mermaid .label {
-  color: #f00 !important;
+  color: #0e3c55 !important;
   font-size: 1rem !important;
 }
-pre {
+.mermaid {
   background: #a7cddf !important;
 }
 .content {
