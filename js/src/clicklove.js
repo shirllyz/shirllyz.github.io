@@ -6,8 +6,8 @@ var r = Math.floor(Math.random() * 256);
 var g = Math.floor(Math.random() * 256);
 var b = Math.floor(Math.random() * 256);
 console.log(b);
-var color = "rgb(" + r + "," + g + "," + b + ",0.1) ";
+var color = "rgb(" + r + "," + g + "," + b + ",0.6) ";
 console.log(color)
 var bd = document.getElementById("body")
-bd.style.background = 'url("/images/body.png") center center / cover no-repeat fixed';
-// bd.style.background = color;
+// bd.style.background = 'url("/images/body.png") center center / cover no-repeat fixed';
+bd.style.background = color;
