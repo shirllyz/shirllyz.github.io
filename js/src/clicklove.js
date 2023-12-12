@@ -9,6 +9,6 @@ var t = Math.floor(Math.random() * 10) / 10;
 console.log(t);
 var color = "rgb(" + r + "," + g + "," + b + "," + t.toFixed(1) + ") ";
 console.log(color)
-var bd = document.getElementById("body")
+var bd = document.getElementById("body");
 // bd.style.background = 'url("/images/body.png") center center / cover no-repeat fixed';
 bd.style.background = color;
