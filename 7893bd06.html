@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/S.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="vscode,drawio," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="vscode配置drwaio   打开vscode，点击拓展，收索drawio，点击安装即可：   完成后，进行重启。   接下来新建一个文件，随意命名，但后缀一定为.drawio。   点击Enter键后，弹出文件保存的窗口，自行保存即可。   2023&#x2F;10&#x2F;14 更新 ioDraw 免费在线画流程图、思维导图、甘特图 良工绘图-在线流程图制作软件-免费画流程图 (lghuitu.com) H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode配置drawio">
+<meta property="og:url" content="https://shirllyz.github.io/7893bd06.html">
+<meta property="og:site_name" content="shirlly">
+<meta property="og:description" content="vscode配置drwaio   打开vscode，点击拓展，收索drawio，点击安装即可：   完成后，进行重启。   接下来新建一个文件，随意命名，但后缀一定为.drawio。   点击Enter键后，弹出文件保存的窗口，自行保存即可。   2023&#x2F;10&#x2F;14 更新 ioDraw 免费在线画流程图、思维导图、甘特图 良工绘图-在线流程图制作软件-免费画流程图 (lghuitu.com) H">
+<meta property="og:locale">
+<meta property="og:image" content="https://developer.qcloudimg.com/http-save/9118877/37632ceb1b3d04f6253011b3982886ae.jpg">
+<meta property="og:image" content="https://developer.qcloudimg.com/http-save/9118877/ba13cd2aae6e28b21f4ec3df1fa6f279.jpg">
+<meta property="og:image" content="https://developer.qcloudimg.com/http-save/9118877/7b0d50719b51124f56fa5b0b6f60dfa9.jpg">
+<meta property="og:image" content="https://developer.qcloudimg.com/http-save/9118877/de2a4c15a08ca0806150a019e05bb45a.jpg">
+<meta property="og:image" content="https://developer.qcloudimg.com/http-save/9118877/034480605e357602edead6dd31ab3499.jpg">
+<meta property="og:image" content="https://ask.qcloudimg.com/developer-images/article-audit/9118877/tku8hh4xrc.png">
+<meta property="article:published_time" content="2023-12-06T05:46:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T05:53:25.985Z">
+<meta property="article:author" content="shirlly">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="drawio">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://developer.qcloudimg.com/http-save/9118877/37632ceb1b3d04f6253011b3982886ae.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shirllyz.github.io/7893bd06.html"/>
+
+
+
+
+
+  <title>vscode配置drawio | shirlly</title>
+  
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" id="body" style="" lang="zh-Hans">
+<canvas id="mineCanvas"></canvas>
+  
+  
+    
+  
+  
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shirlly</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">shirlly</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shirllyz.github.io/7893bd06.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shirlly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vscode配置drawio</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-12-06T13:46:00+08:00">
+                2023-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vscode%E9%85%8D%E7%BD%AEdraw-io/" itemprop="url" rel="index">
+                    <span itemprop="name">vscode配置draw.io</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="vscode配置drwaio">vscode配置drwaio</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>打开vscode，点击拓展，收索drawio，点击安装即可：</p>
+</li>
+<li class="lvl-2">
+<p>完成后，进行重启。</p>
+</li>
+<li class="lvl-2">
+<p>接下来新建一个文件，随意命名，但后缀一定为.drawio。</p>
+</li>
+<li class="lvl-2">
+<p>点击Enter键后，弹出文件保存的窗口，自行保存即可。</p>
+</li>
+</ul>
+<p>2023/10/14 更新<br>
+<a target="_blank" rel="noopener" href="https://www.iodraw.com/">ioDraw 免费在线画流程图、思维导图、甘特图</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.lghuitu.com/">良工绘图-在线流程图制作软件-免费画流程图 (lghuitu.com)</a></p>
+<h2 id="Hexo-38-Drawio-嵌入博客">Hexo -38- Drawio 嵌入博客</h2>
+<blockquote>
+<p><a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fwww.zywvvd.com%2Fnotes%2Ftools%2Fdrawio%2Fdrawio%2F&amp;source=article&amp;objectId=2208221">Drawio</a> 可以方便地输出流程图，也可以导出 html 代码，本文记录将 drawio 文件导出的 html 代码渲染到 hexo 博客中的方法。</p>
+</blockquote>
+<h4 id="实现思路">实现思路</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>绘制 drawio 文件</p>
+</li>
+<li class="lvl-2">
+<p>将 drawio 文件导出为 html 代码</p>
+</li>
+<li class="lvl-2">
+<p>自建 js 文件服务</p>
+</li>
+<li class="lvl-2">
+<p>向文章中添加 html 代码</p>
+</li>
+</ul>
+<h4 id="操作流程">操作流程</h4>
+<h5 id="drawio-输出-html-代码">drawio 输出 html 代码</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可以用<code>导出为</code>的方法或<code>嵌入</code>的方法</p>
+</li>
+</ul>
+<h6 id="导出为">导出为</h6>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>选择 <code>文件</code> -&gt; <code>导出为</code> -&gt; <code>HTML</code></p>
+</li>
+</ul>
+<p><img src="https://developer.qcloudimg.com/http-save/9118877/37632ceb1b3d04f6253011b3982886ae.jpg" alt="img"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>配置选项，选择<code>导出</code></p>
+</li>
+</ul>
+<p><img src="https://developer.qcloudimg.com/http-save/9118877/ba13cd2aae6e28b21f4ec3df1fa6f279.jpg" alt="img"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>导出后得到 html 文件</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> <span class="variable constant_">IE</span>]&gt;<span class="language-xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=5,IE=9&quot;</span> &gt;</span>&lt;![endif]--&gt;</span></span><br><span class="line"><span class="language-xml"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">title</span>&gt;</span>未命名绘图<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mxgraph&quot;</span> <span class="attr">style</span>=<span class="string">&quot;max-width:100%;border:1px solid transparent;&quot;</span> <span class="attr">data-mxgraph</span>=<span class="string">&quot;&#123;<span class="symbol">&amp;quot;</span>highlight<span class="symbol">&amp;quot;</span>:<span class="symbol">&amp;quot;</span>#0000ff<span class="symbol">&amp;quot;</span>,<span class="symbol">&amp;quot;</span>nav<span class="symbol">&amp;quot;</span>:true,<span class="symbol">&amp;quot;</span>resize<span class="symbol">&amp;quot;</span>:true,<span class="symbol">&amp;quot;</span>toolbar<span class="symbol">&amp;quot;</span>:<span class="symbol">&amp;quot;</span>zoom layers tags lightbox<span class="symbol">&amp;quot;</span>,<span class="symbol">&amp;quot;</span>edit<span class="symbol">&amp;quot;</span>:<span class="symbol">&amp;quot;</span>_blank<span class="symbol">&amp;quot;</span>,<span class="symbol">&amp;quot;</span>xml<span class="symbol">&amp;quot;</span>:<span class="symbol">&amp;quot;</span><span class="symbol">&amp;lt;</span>mxfile host=\<span class="symbol">&amp;quot;</span>Electron\<span class="symbol">&amp;quot;</span> modified=\<span class="symbol">&amp;quot;</span>2023-01-09T09:11:04.012Z\<span class="symbol">&amp;quot;</span> agent=\<span class="symbol">&amp;quot;</span>5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.7.4 Chrome/106.0.5249.199 Electron/21.3.3 Safari/537.36\<span class="symbol">&amp;quot;</span> etag=\<span class="symbol">&amp;quot;</span>sjEwUV0v36QnULryjynB\<span class="symbol">&amp;quot;</span> version=\<span class="symbol">&amp;quot;</span>20.7.4\<span class="symbol">&amp;quot;</span> type=\<span class="symbol">&amp;quot;</span>device\<span class="symbol">&amp;quot;</span><span class="symbol">&amp;gt;</span><span class="symbol">&amp;lt;</span>diagram id=\<span class="symbol">&amp;quot;</span>3228e29e-7158-1315-38df-8450db1d8a1d\<span class="symbol">&amp;quot;</span> name=\<span class="symbol">&amp;quot;</span>Page-1\<span class="symbol">&amp;quot;</span><span class="symbol">&amp;gt;</span>1dfLb5swHAfwvybXCr94HJOs7XboZZ20swcOWDV25Div/fVzwo8EYip1aoRoDhH++oH9MbJgRpb14dnydfViCqFmOCoOM/JthnGapP7/FBwhiJImKK0smghdg1f5V0AYQbqVhdj0GjpjlJPrfpgbrUXuehm31uz7zVZG9e+65qUIgtecqzD9LQtXQYri7FrxXciyglunGNb3h+dvpTVbDffTRoumpubtMLDGTcULs+9E5HFGltYY11zVh6VQJ9VWrOn39E7tZcpWaPeRDhgxAp12XG1h5TA3d2wpfCev7guLlVRqaZSx5wryFKVJxHxu1jyX7rTTceSLG2fNm2gbngHIonK18iV0GsZo1x3m/PN5OP92dsI6cehEsJ5nYWrh7NE3gVpC6QNrOsGDhzPQ3l+3kUWQVZ0dvIQcHp3yMvrV0F8A4/uk+BOkCM/ni2mRoiTqgdKxPcknPEXKYoon5Unj7OYRJWOL0kD0h975FUmjA1q/KgcgcEpj6stcyVL7Qu67Ca+0OAFIf37OoaKWRaHGU8XZrao/k9ukA4uyAdjkTq4scP0pdkZtvzJsPAXYOID9ZXkhv7IrDVwZG901CVxfpJKOw0gDrAHjB7Q6W4Hi++ix4BBF2ZAeHcCjd8JLA7yl0Ssl/dvotPEovcWjaGy8LMSruNlMXC48DEeXa4fpyHkdrnMxcTvGsgd88+JDh/DiqA27fAS16X8A+uL1c+pc1/laJY//AA==<span class="symbol">&amp;lt;</span>/diagram<span class="symbol">&amp;gt;</span><span class="symbol">&amp;lt;</span>/mxfile<span class="symbol">&amp;gt;</span><span class="symbol">&amp;quot;</span>&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://viewer.diagrams.net/js/viewer-static.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>复制</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>其中比较重要的是 <code>body</code> 中的代码</p>
+</li>
+</ul>
+<h6 id="嵌入">嵌入</h6>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>选择 <code>文件</code> -&gt; <code>嵌入</code> -&gt; <code>HTML</code></p>
+</li>
+</ul>
+<p><img src="https://developer.qcloudimg.com/http-save/9118877/7b0d50719b51124f56fa5b0b6f60dfa9.jpg" alt="img"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>和上文一样配置选择后选择<code>创建</code></p>
+</li>
+<li class="lvl-2">
+<p>获取 drawio 代码</p>
+</li>
+</ul>
+<p><img src="https://developer.qcloudimg.com/http-save/9118877/de2a4c15a08ca0806150a019e05bb45a.jpg" alt="img"></p>
+<blockquote>
+<p>两种方法获取的代码是相同的，都可以使用</p>
+</blockquote>
+<h5 id="自建-js-文件服务">自建 js 文件服务</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>上述代码在 浏览器中已经可以正确运行了，但官网访问较慢，如果想要自建此部分服务可以下载官网的 js 文件放到自己的<a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&amp;from=20065">服务器</a>里，在渲染代码时使用自己的 js 文件</p>
+</li>
+<li class="lvl-2">
+<p>自建 js 服务可以在速度、代码运行上获得更稳定的效果</p>
+</li>
+<li class="lvl-2">
+<p>**注意：**该步骤可选，不自建服务也可以实现网页嵌入</p>
+</li>
+</ul>
+<h6 id="实现方法">实现方法</h6>
+<ul class="lvl-0">
+<li class="lvl-3">
+<p>访问官网 js 文件  链接：<a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fviewer.diagrams.net%2Fjs%2Fviewer-static.min.js&amp;source=article&amp;objectId=2208221">https://viewer.diagrams.net/js/viewer-static.min.js</a></p>
+</li>
+</ul>
+<p><img src="https://developer.qcloudimg.com/http-save/9118877/034480605e357602edead6dd31ab3499.jpg" alt="img"></p>
+<ul class="lvl-0">
+<li class="lvl-3">
+<p>将此部分所有代码保存在文件中放在自己的服务器里  我的 js 文件链接：<a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2F101.43.39.125%2FHexoFiles%2Fjs%2Fviewer-static.min.js&amp;source=article&amp;objectId=2208221">https://101.43.39.125/HexoFiles/js/viewer-static.min.js</a></p>
+</li>
+</ul>
+<h6 id="使用方法">使用方法</h6>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在使用 drawio 导出代码时替换 js 文件路径即可</p>
+</li>
+</ul>
+<h5 id="向文章中添加-html-代码">向文章中添加 html 代码</h5>
+<ul class="lvl-0">
+<li class="lvl-3">
+<p>在 Markdown 文件中直接粘贴上述代码即可</p>
+</li>
+<li class="lvl-3">
+<p>例如：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;mxgraph&quot;</span> style=<span class="string">&quot;max-width:100%;border:1px solid transparent;&quot;</span> data-mxgraph=<span class="string">&quot;&#123;&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;toolbar&amp;quot;:&amp;quot;zoom layers tags lightbox&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;_blank&amp;quot;,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile host=\&amp;quot;Electron\&amp;quot; modified=\&amp;quot;2023-01-09T08:53:08.642Z\&amp;quot; agent=\&amp;quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.7.4 Chrome/106.0.5249.199 Electron/21.3.3 Safari/537.36\&amp;quot; etag=\&amp;quot;nM_XbfnI6LI-bt9XxW_9\&amp;quot; version=\&amp;quot;20.7.4\&amp;quot; type=\&amp;quot;device\&amp;quot;&amp;gt;&amp;lt;diagram id=\&amp;quot;3228e29e-7158-1315-38df-8450db1d8a1d\&amp;quot; name=\&amp;quot;Page-1\&amp;quot;&amp;gt;1ddNb5swGAfwT8O1wm8kHJOs7XboZZ20swcOWDV25Dhv+/Qz4SGBmEqdGiGaS/DfL9g/IwsisqqOz5ZvyheTCxXhOD9G5FuEMaKE+r86OTXJnCRNUFiZQ6Nr8Cr/CghjSHcyF9teQ2eMcnLTDzOjtchcL+PWmkO/2dqo/l03vBBB8JpxFaa/Ze5KSFGSXiu+C1mUcOs5njUVf3j2Vliz03A/bbRoaireDgNr3JY8N4dORB4jsrLGuOaqOq6Eqllbsabf0zu1lylbod1HOmDECHTac7WDlcPc3Kml8J28ui8s11KplVHGnivIUzyfxcznZsMz6eqdTmJf3Dpr3kTb8AxAlqWrlC+hehijXXeY88/n4fzb2QnrxLETwXqehamEsyffBGoJpQ+s6QQPHk5B+3DdRhZDVnZ28BJyeHSKy+hXQ38BjO+T4k+QIrxYLKdFimZxD5SO7Uk+4SnmLKF4Up40SW8eUTK2KA1Ef+i9X5E0OqD1q3IAAqc0pr7MlSy0L2S+m/BKyxpA+vNzARWVzHM1nipOb1X9mdwmHViUDsDO7uTKAtefYm/U7ivDJlOATQLYX5bn8iu70sCVsdFdZ4Hri1TScRhpgDVg/IBWZytQch89FhyiKB3SowN49E548wBvZfRaSf82Om08Sm/xKBobLw3xSm62E5cLD8PR5dphOnJeh+tMTNyOsfQB37z40CG8JG7DLh9BbfofgL54/Zw613U+V8njPw==&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;&#125;&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://101.43.39.125/HexoFiles/js/viewer-static.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>复制</p>
+<h4 id="效果展示">效果展示</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>上述示例代码效果如下：</p>
+</li>
+</ul>
+<p><img src="https://ask.qcloudimg.com/developer-images/article-audit/9118877/tku8hh4xrc.png" alt="img"></p>
+<h4 id="参考资料">参考资料</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://cloud.tencent.com/developer/tools/blog-entry?target=http%3A%2F%2Fwww.zywvvd.com%2Fnotes%2Ftools%2Fdrawio%2Fdrawio%2F&amp;source=article&amp;objectId=2208221">www.zywvvd.com/notes/tools/drawio/drawio/</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fwww.drawzh.com%2F1606.html&amp;source=article&amp;objectId=2208221">https://www.drawzh.com/1606.html</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vscode/" rel="tag"># vscode</a>
+          
+            <a href="/tags/drawio/" rel="tag"># drawio</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/626cf99c.html" rel="next" title="Hexo主题 —— NexT优化">
+                <i class="fa fa-chevron-left"></i> Hexo主题 —— NexT优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/b898ddbc.html" rel="prev" title="世界上最简单的会计书">
+                世界上最简单的会计书 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEdrwaio"><span class="nav-number">1.</span> <span class="nav-text">vscode配置drwaio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-38-Drawio-%E5%B5%8C%E5%85%A5%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">Hexo -38- Drawio 嵌入博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="nav-number">2.0.1.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.0.2.</span> <span class="nav-text">操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#drawio-%E8%BE%93%E5%87%BA-html-%E4%BB%A3%E7%A0%81"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">drawio 输出 html 代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E4%B8%BA"><span class="nav-number">2.0.2.1.1.</span> <span class="nav-text">导出为</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5"><span class="nav-number">2.0.2.1.2.</span> <span class="nav-text">嵌入</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%BB%BA-js-%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">自建 js 文件服务</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.0.2.2.1.</span> <span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.0.2.2.2.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0-html-%E4%BB%A3%E7%A0%81"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">向文章中添加 html 代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">2.0.3.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.0.4.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shirlly</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">24.7k</span>
+  
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+<!-- 引入不蒜子计数 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- 
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"> -->
+        <!-- <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+        <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitment({
+            id: window.location.pathname, 
+            owner: 'shirllyz',
+            repo: 'blogComments',
+            
+            oauth: {
+            
+            
+                client_secret: '667479f528b19fd3f7be9f2cfc2e93a750d849f2',
+            
+                client_id: '64392b9ad5b48457e8ce'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</aa>
+</body>
+  <!-- 页面点击小红心 -->
+ <script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--<script type="text/javascript" src="/js/src/click.js"></script>-->
+<script src="https://shirllyz.github.io/live2d-widget/autoload.js"></script>
+
+</html>
