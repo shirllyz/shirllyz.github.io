@@ -5,7 +5,7 @@
 var r = Math.floor(Math.random() * 256);
 var g = Math.floor(Math.random() * 256);
 var b = Math.floor(Math.random() * 256);
-var t = Math.floor(Math.random() * 10) / 10;
+var t = Math.floor(Math.random() * 9) / 10;
 console.log(t);
 var color = "rgb(" + r + "," + g + "," + b + "," + t.toFixed(1) + ") ";
 console.log(color)
