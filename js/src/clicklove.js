@@ -35,4 +35,4 @@ function changeGradient() {
 }
 
 // 设置定时器，每隔一段时间改变渐变效果
-setInterval(changeGradient, 2000);
+setInterval(changeGradient, 8000);
