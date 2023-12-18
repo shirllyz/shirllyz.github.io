@@ -33,6 +33,6 @@ function changeGradient() {
   // 循环遍历颜色数组
   index = (index + 1) % colors.length;
 }
-
+changeGradient();
 // 设置定时器，每隔一段时间改变渐变效果
 setInterval(changeGradient, 10000);
