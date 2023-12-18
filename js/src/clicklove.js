@@ -6,9 +6,9 @@ function sjys() {
   var g = Math.floor(Math.random() * 256);
   var b = Math.floor(Math.random() * 256);
   var t = Math.floor(Math.random() * 9) / 10;
-  console.log(t);
+  // console.log(t);
   var color = "rgb(" + r + "," + g + "," + b + "," + t.toFixed(1) + ") ";
-  console.log(color)
+  // console.log(color)
   return color;
 }
 // var bd = document.getElementById("body");
@@ -21,14 +21,16 @@ function changeGradient() {
   // 使用 jQuery 设置左右渐变背景
   var colors = [sjys(), sjys(), sjys()]; // 渐变色数组
   // var colors = ['#ff0000', '#00ff00', '#0000ff']; // 渐变色数组
-  console.log(colors.join(', '))
+  // console.log(colors.join(', '))
   var gradient = 'linear-gradient(to bottom right, ' + colors.join(', ') + ')';
+  // var gradient = 'linear-gradient(217deg,' + sjys() + ',' + sjys() + ' 70.71%), linear-gradient(127deg, ' + sjys() + ', ' + sjys() + ' 70.71%),linear-gradient(336deg, ' + sjys() + ', ' + sjys() + ' 70.71%)';
   var cssProperties = {
     'background': gradient,
     'background-size': 'cover',
     'background-attachment': 'fixed',
     'background-repeat': 'no-repeat',
   };
+
   $('#body').css(cssProperties);
   // 循环遍历颜色数组
   index = (index + 1) % colors.length;
