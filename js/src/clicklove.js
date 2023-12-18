@@ -22,7 +22,7 @@ function changeGradient() {
   var colors = [sjys(), sjys(), sjys()]; // 渐变色数组
   // var colors = ['#ff0000', '#00ff00', '#0000ff']; // 渐变色数组
   // console.log(colors.join(', '))
-  var gradient = 'linear-gradient(to bottom right, ' + colors.join(', ') + ')';
+  var gradient = 'linear-gradient(to top left, ' + colors.join(', ') + ')';
   // var gradient = 'linear-gradient(217deg,' + sjys() + ',' + sjys() + ' 70.71%), linear-gradient(127deg, ' + sjys() + ', ' + sjys() + ' 70.71%),linear-gradient(336deg, ' + sjys() + ', ' + sjys() + ' 70.71%)';
   var cssProperties = {
     'background': gradient,
